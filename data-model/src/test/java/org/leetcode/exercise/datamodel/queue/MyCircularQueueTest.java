@@ -8,24 +8,28 @@ public class MyCircularQueueTest {
 
   @Test
   public void test() {
-    MyCircularQueue circularQueue = new MyCircularQueue(3); // 设置长度为 3
+    MyCircularQueue circularQueue = new MyCircularQueue(6); // 设置长度为 3
 
-    assertTrue(circularQueue.enQueue(1));  // 返回 true
+    assertTrue(circularQueue.enQueue(6));
 
-    assertTrue(circularQueue.enQueue(2));  // 返回 true
+    assertEquals(6, circularQueue.Rear());
 
-    assertTrue(circularQueue.enQueue(3));  // 返回 true
+    assertEquals(6, circularQueue.Rear());
 
-    assertFalse(circularQueue.enQueue(4));  // 返回 false，队列已满
+    assertTrue(circularQueue.deQueue());
 
-    assertEquals(3, circularQueue.Rear());  // 返回 3
+    assertTrue(circularQueue.enQueue(5));
 
-    assertTrue(circularQueue.isFull());  // 返回 true
+    assertEquals(5, circularQueue.Rear());
 
-    assertTrue(circularQueue.deQueue());  // 返回 true
+    assertTrue(circularQueue.deQueue());
 
-    assertTrue(circularQueue.enQueue(4));  // 返回 true
+    assertEquals(-1, circularQueue.Front());
 
-    assertEquals(4, circularQueue.Rear());  // 返回 4
+    assertFalse(circularQueue.deQueue());
+
+    assertFalse(circularQueue.deQueue());
+
+    assertFalse(circularQueue.deQueue());
   }
 }
