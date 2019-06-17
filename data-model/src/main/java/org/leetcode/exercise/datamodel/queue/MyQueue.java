@@ -3,7 +3,7 @@ package org.leetcode.exercise.datamodel.queue;// "static void main" must be defi
 import java.util.ArrayList;
 import java.util.List;
 
-class MyQueue {
+public class MyQueue {
   // store elements
   private List<Integer> data;
   // a pointer to indicate the start position
