@@ -22,13 +22,12 @@ class MyQueue {
     return true;
   }
 
-  ;
 
   /**
    * Delete an element from the queue. Return true if the operation is successful.
    */
   public boolean deQueue() {
-    if (isEmpty() == true) {
+    if (isEmpty()) {
       return false;
     }
     p_start++;
@@ -48,22 +47,22 @@ class MyQueue {
   public int Front() {
     return data.get(p_start);
   }
-};
+}
 
 class Main {
   public static void main(String[] args) {
     MyQueue q = new MyQueue();
     q.enQueue(5);
     q.enQueue(3);
-    if (q.isEmpty() == false) {
+    if (!q.isEmpty()) {
       System.out.println(q.Front());
     }
     q.deQueue();
-    if (q.isEmpty() == false) {
+    if (!q.isEmpty()) {
       System.out.println(q.Front());
     }
     q.deQueue();
-    if (q.isEmpty() == false) {
+    if (!q.isEmpty()) {
       System.out.println(q.Front());
     }
   }
