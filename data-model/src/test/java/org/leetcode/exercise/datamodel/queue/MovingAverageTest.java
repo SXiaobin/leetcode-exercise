@@ -8,5 +8,6 @@ public class MovingAverageTest {
 
   @Test
   public void next() {
+    MovingAverage movingAverage = new MovingAverage(3);
   }
 }
