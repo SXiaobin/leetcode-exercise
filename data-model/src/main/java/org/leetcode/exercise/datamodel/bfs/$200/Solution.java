@@ -6,9 +6,8 @@ import java.util.Queue;
 /**
  * 岛屿数量
  */
-public class MySolution {
-  private static final char ISLAND = 1;
-  private static final char SEA = 0;
+public class Solution {
+  private static final char SEA = '0';
   private static final char EXPLORED = 'Y';
 
   public int numIslands(char[][] grid) {
@@ -35,34 +34,46 @@ public class MySolution {
      * */
     while (!footprints.isEmpty()) {
       Node footprint = footprints.poll();
-      grid[footprint.x][footprint.y] = EXPLORED;
       footprints.addAll(pickNextSteps(footprint, grid));
     }
   }
 
   private Queue<Node> pickNextSteps(Node footprint, char[][] grid) {
-    /*
-     * 因为我们是在从左至右、从上至下遍历图，所以实际上我们在找寻没有遍历过的相邻节点时，只需向右向下遍历即可
-     * */
-    // 向右走
     Queue<Node> queue = new LinkedList<>();
-    int x = footprint.x + 1;
-    int y = footprint.y;
-    if (x < grid.length && (grid[x][y] != EXPLORED) && (grid[x][y] != SEA)) {
+    int[] stepForwards = new int[]{-1, 1};
+
+    for (int stepForward : stepForwards) {
+      int x = footprint.x + stepForward;
+      int y = footprint.y;
+
+      if (x < 0)
+        continue;
+      if (x >= grid.length)
+        continue;
+      if (grid[x][y] == EXPLORED || grid[x][y] == SEA)
+        continue;
       Node node = new Node();
       node.x = x;
       node.y = y;
       queue.add(node);
+      grid[x][y] = EXPLORED;
     }
 
-    // 向下走
-    x = footprint.x;
-    y = footprint.y + 1;
-    if (y < grid[x].length && (grid[x][y] != EXPLORED)) {
+    for (int stepForward : stepForwards) {
+      int x = footprint.x;
+      int y = footprint.y + stepForward;
+
+      if (y < 0)
+        continue;
+      if (y >= grid[x].length)
+        continue;
+      if (grid[x][y] == EXPLORED || grid[x][y] == SEA)
+        continue;
       Node node = new Node();
       node.x = x;
       node.y = y;
       queue.add(node);
+      grid[x][y] = EXPLORED;
     }
 
     return queue;
