@@ -1,4 +1,4 @@
-package org.leetcode.exercise.datamodel.bfs;
+package org.leetcode.exercise.datamodel.bfs.$286;
 
 /**
  * 脱离宽度优先搜索模板的思维惯性，由“门”出发，使用递归实现。这种实现实际上为多次深度优先。

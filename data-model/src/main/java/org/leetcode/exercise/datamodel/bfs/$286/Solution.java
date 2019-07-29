@@ -1,4 +1,4 @@
-package org.leetcode.exercise.datamodel.bfs;
+package org.leetcode.exercise.datamodel.bfs.$286;
 
 
 import java.util.HashSet;

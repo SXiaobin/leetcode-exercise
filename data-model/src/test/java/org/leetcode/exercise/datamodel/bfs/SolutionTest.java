@@ -2,6 +2,8 @@ package org.leetcode.exercise.datamodel.bfs;
 
 import org.junit.Assert;
 import org.junit.Test;
+import org.leetcode.exercise.datamodel.bfs.$286.Solution;
+import org.leetcode.exercise.datamodel.bfs.$286.SolutionA;
 
 public class SolutionTest {
 
