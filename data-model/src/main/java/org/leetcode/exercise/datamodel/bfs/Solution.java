@@ -46,7 +46,6 @@ public class Solution {
 
       queue.addAll(neighbors);
     }
-    return;
   }
 
   private void fillPassedGate(int[][] rooms, Node current, int step) {
@@ -108,7 +107,7 @@ public class Solution {
   }
 
 
-  class Node {
+  static class Node {
     int x;
     int y;
     Node passedFrom;
